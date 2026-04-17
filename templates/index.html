@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Log Auditing Platform</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic AI Log Auditing & Analysis Platform</h1>
+        <p>Upload logs or stream real-time events for full automated analysis.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Upload Log File</h2>
+            <input type="file" id="logFile" accept=".log,.txt,.csv">
+            <button id="analyzeBtn">Run Full Analysis</button>
+            <p id="uploadStatus"></p>
+        </section>
+
+        <section class="card nav-card">
+            <h2>Analysis Sections</h2>
+            <div class="tab-nav">
+                <button class="tab-btn active" data-tab="summaryTab">Summary</button>
+                <button class="tab-btn" data-tab="chartsTab">Charts</button>
+                <button class="tab-btn" data-tab="timelineTab">Timeline</button>
+                <button class="tab-btn" data-tab="insightsTab">AI Insights</button>
+                <button class="tab-btn" data-tab="assistantTab">Assistant</button>
+                <button class="tab-btn" data-tab="realtimeTab">Real-time</button>
+            </div>
+        </section>
+
+        <section class="card tab-content active" id="summaryTab">
+            <h2>Summary</h2>
+            <div id="summaryGrid"></div>
+        </section>
+
+        <section class="card tab-content" id="chartsTab">
+            <h2>Charts</h2>
+            <canvas id="logsOverTime"></canvas>
+            <canvas id="errorHeatmap"></canvas>
+            <canvas id="severityChart"></canvas>
+        </section>
+
+        <section class="card tab-content" id="timelineTab">
+            <h2>Incident Timeline</h2>
+            <ul id="timelineList"></ul>
+        </section>
+
+        <section class="card tab-content" id="insightsTab">
+            <h2>AI Insights</h2>
+            <div id="aiInsights"></div>
+        </section>
+
+        <section class="card tab-content" id="assistantTab">
+            <h2>Chat Assistant</h2>
+            <input type="text" id="chatQuestion" placeholder="Why did this function fail?">
+            <button id="askBtn">Ask</button>
+            <p id="chatAnswer"></p>
+            <button id="feedbackCorrect">Mark Correct</button>
+            <button id="feedbackIncorrect">Mark Incorrect</button>
+        </section>
+
+        <section class="card tab-content" id="realtimeTab">
+            <h2>Real-Time Monitoring Stream</h2>
+            <ul id="realtimeFeed"></ul>
+        </section>
+    </main>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

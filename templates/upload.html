@@ -1,0 +1,87 @@
+{% extends "simple_base.html" %}
+{% block content %}
+<div class="upload-page">
+    <div class="upload-header">
+        <h2>Log Analysis Platform</h2>
+        <p>Upload your log files for comprehensive AI-powered analysis and insights</p>
+    </div>
+
+    <div class="upload-grid">
+        <section class="card upload-section">
+            <div class="upload-icon">upload_file</div>
+            <h3>Upload Log Files</h3>
+            <div class="upload-description">
+                Support for `.log`, `.txt`, and `.csv` formats. Our advanced pipeline will analyze patterns, detect anomalies, and provide actionable insights.
+            </div>
+            
+            <div class="file-input-wrapper">
+                <input type="file" id="logFile" accept=".log,.txt,.csv">
+                <button class="file-input-button">
+                    <span>Choose File</span>
+                    <span>or drag and drop</span>
+                </button>
+            </div>
+            
+            <button id="analyzeBtn" class="analyze-button">
+                <span>Run Full Analysis</span>
+                <span>Start comprehensive log analysis</span>
+            </button>
+            
+            <div id="uploadStatus" class="upload-status">No analysis started.</div>
+            
+            <div id="filePreview" class="file-preview" style="display: none;"></div>
+        </section>
+
+        <section class="card upload-features">
+            <h3>Analysis Features</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">analytics</div>
+                    <div class="feature-title">Pattern Recognition</div>
+                    <div class="feature-description">Advanced ML algorithms identify recurring patterns and anomalies</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">timeline</div>
+                    <div class="feature-title">Timeline Analysis</div>
+                    <div class="feature-description">Chronological reconstruction of events and incident correlation</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">psychology</div>
+                    <div class="feature-title">AI Insights</div>
+                    <div class="feature-description">Intelligent recommendations powered by advanced language models</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">monitoring</div>
+                    <div class="feature-title">Real-time Monitoring</div>
+                    <div class="feature-description">Continuous log streaming and live analysis capabilities</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="card uploaded-files">
+        <div class="card-header">
+            <h3>Uploaded Files</h3>
+            <div class="card-icon">folder</div>
+        </div>
+        <div class="file-selection-header">
+            <div class="selection-info">
+                <span id="selectedCount">0 files selected</span>
+                <button class="btn-select-all" onclick="selectAllFiles()">Select All</button>
+                <button class="btn-deselect-all" onclick="deselectAllFiles()">Deselect All</button>
+            </div>
+        </div>
+        <div id="fileList" class="file-list">
+            <p class="no-files">No files uploaded yet</p>
+        </div>
+    </section>
+
+    <section class="card latest-analysis">
+        <div class="card-header">
+            <h3>Latest Analysis Results</h3>
+            <div class="card-icon">assessment</div>
+        </div>
+        <div id="summaryGrid"></div>
+    </section>
+</div>
+{% endblock %}

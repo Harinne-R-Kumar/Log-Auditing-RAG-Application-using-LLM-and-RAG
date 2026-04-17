@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+    <div class="timeline-header">
+        <h2>Incident Timeline</h2>
+        <p>Chronological reconstruction of events from the latest uploaded dataset.</p>
+        <div class="timeline-filters">
+            <button class="filter-btn active" data-filter="all">All Events</button>
+            <button class="filter-btn" data-filter="critical">Critical</button>
+            <button class="filter-btn" data-filter="error">Errors</button>
+            <button class="filter-btn" data-filter="warning">Warnings</button>
+            <button class="filter-btn" data-filter="info">Info</button>
+        </div>
+    </div>
+    
+    <div class="timeline-container">
+        <div class="timeline-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalEvents">0</div>
+                <div class="stat-label">Total Events</div>
+            </div>
+            <div class="stat-card critical">
+                <div class="stat-number" id="criticalCount">0</div>
+                <div class="stat-label">Critical</div>
+            </div>
+            <div class="stat-card error">
+                <div class="stat-number" id="errorCount">0</div>
+                <div class="stat-label">Errors</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-number" id="warningCount">0</div>
+                <div class="stat-label">Warnings</div>
+            </div>
+        </div>
+        
+        <div class="timeline-events" id="timelineList">
+            <!-- Timeline events will be populated here -->
+        </div>
+    </div>
+</section>
+{% endblock %}

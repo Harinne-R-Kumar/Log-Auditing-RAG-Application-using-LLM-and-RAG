@@ -1,0 +1,3 @@
+2026-04-17 11:00:00 INFO [Web] Web server started
+2026-04-17 11:01:00 ERROR [Auth] Authentication failed for user admin
+2026-04-17 11:02:00 CRITICAL [Security] Multiple login attempts detected

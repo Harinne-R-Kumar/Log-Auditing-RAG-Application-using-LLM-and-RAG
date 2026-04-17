@@ -1,0 +1,10 @@
+2026-04-17 10:00:00 INFO [Application] Starting application server
+2026-04-17 10:01:00 INFO [Database] Database connection established
+2026-04-17 10:02:00 WARNING [Memory] Memory usage at 75%
+2026-04-17 10:03:00 ERROR [Database] Connection timeout after 30 seconds
+2026-04-17 10:04:00 ERROR [Database] Failed to reconnect to database
+2026-04-17 10:05:00 CRITICAL [Application] System shutting down due to database failure
+2026-04-17 10:06:00 INFO [Application] Attempting system restart
+2026-04-17 10:07:00 INFO [Database] Database connection restored
+2026-04-17 10:08:00 WARNING [Memory] Memory usage still high at 80%
+2026-04-17 10:09:00 INFO [Application] Application fully operational

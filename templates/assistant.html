@@ -1,0 +1,55 @@
+{% extends "simple_base.html" %}
+{% block content %}
+<div class="assistant-page">
+    <div class="assistant-header">
+        <h2>AI Chat Assistant</h2>
+        <p>Get instant insights about your log files and system analysis</p>
+    </div>
+    
+    <div class="chat-container">
+        <div class="chat-messages" id="aiChatMessages">
+            <div class="chat-message assistant">
+                <div class="chat-avatar">AI</div>
+                <div class="chat-content">
+                    Hello! I'm your AI assistant. I can help you analyze your log files and provide insights about high-risk logs, error patterns, and recommendations. Upload a log file first, then ask me anything!
+                </div>
+            </div>
+        </div>
+        
+        <form id="aiChatForm" class="chat-form">
+            <div class="input-group">
+                <input type="text" id="aiChatInput" placeholder="Ask about your logs... (e.g., Why are there high risk logs?)" autocomplete="off">
+                <button type="submit" class="send-btn">Send</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="quick-questions">
+        <h3>Quick Questions</h3>
+        <div class="question-buttons">
+            <button class="quick-question-btn" onclick="askQuickQuestion('Why are there high risk logs?')">
+                Why are there high risk logs?
+            </button>
+            <button class="quick-question-btn" onclick="askQuickQuestion('What are the main issues?')">
+                What are the main issues?
+            </button>
+            <button class="quick-question-btn" onclick="askQuickQuestion('Give me recommendations')">
+                Give me recommendations
+            </button>
+            <button class="quick-question-btn" onclick="askQuickQuestion('Analyze error patterns')">
+                Analyze error patterns
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+function askQuickQuestion(question) {
+    const input = document.getElementById('aiChatInput');
+    const form = document.getElementById('aiChatForm');
+    
+    input.value = question;
+    form.dispatchEvent(new Event('submit'));
+}
+</script>
+{% endblock %}

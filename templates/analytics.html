@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="analytics-header">
+    <h2>Analytics Dashboard</h2>
+    <p>Comprehensive analysis of log patterns and system performance</p>
+</div>
+
+<div class="analytics-grid">
+    <!-- Executive Summary -->
+    <section class="card analytics-summary">
+        <div class="card-header">
+            <h3>Executive Summary</h3>
+            <div class="card-icon">summary</div>
+        </div>
+        <div id="summaryGrid"></div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="card analytics-metrics">
+        <div class="card-header">
+            <h3>Key Performance Indicators</h3>
+            <div class="card-icon">trending_up</div>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-value" id="healthScore">--</div>
+                <div class="metric-label">System Health</div>
+                <div class="metric-change positive">+2.3%</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value" id="errorRate">--</div>
+                <div class="metric-label">Error Rate</div>
+                <div class="metric-change negative">-1.1%</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value" id="avgResponse">--</div>
+                <div class="metric-label">Avg Response</div>
+                <div class="metric-change positive">+0.5s</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value" id="uptime">--</div>
+                <div class="metric-label">Uptime</div>
+                <div class="metric-change positive">99.9%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Grid - 2x2 Layout Centered -->
+    <div class="charts-grid">
+        <section class="card chart-container">
+            <div class="card-header">
+                <h3>Log Volume Trends</h3>
+                <div class="card-icon">timeline</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="logsOverTime"></canvas>
+            </div>
+        </section>
+
+        <section class="card chart-container">
+            <div class="card-header">
+                <h3>Severity Distribution</h3>
+                <div class="card-icon">pie_chart</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="severityChart"></canvas>
+            </div>
+        </section>
+
+        <section class="card chart-container">
+            <div class="card-header">
+                <h3>Error Spike Analysis</h3>
+                <div class="card-icon">analytics</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="errorHeatmap"></canvas>
+            </div>
+        </section>
+
+        <section class="card chart-container">
+            <div class="card-header">
+                <h3>Module Performance</h3>
+                <div class="card-icon">dashboard</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="moduleChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <!-- Detailed Analysis -->
+    <section class="card analytics-details">
+        <div class="card-header">
+            <h3>Detailed Analysis</h3>
+            <div class="card-icon">insights</div>
+        </div>
+        <div class="analysis-tabs">
+            <button class="tab-btn active" data-tab="patterns">Patterns</button>
+            <button class="tab-btn" data-tab="anomalies">Anomalies</button>
+            <button class="tab-btn" data-tab="recommendations">Recommendations</button>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="patterns">
+                <div class="pattern-list">
+                    <div class="pattern-item">
+                        <div class="pattern-severity high">HIGH</div>
+                        <div class="pattern-content">
+                            <div class="pattern-title">Database Connection Failures</div>
+                            <div class="pattern-description">Repeated connection timeouts detected in database module</div>
+                            <div class="pattern-metrics">12 occurrences | Peak: 14:30</div>
+                        </div>
+                    </div>
+                    <div class="pattern-item">
+                        <div class="pattern-severity medium">MEDIUM</div>
+                        <div class="pattern-content">
+                            <div class="pattern-title">Memory Usage Spikes</div>
+                            <div class="pattern-description">Periodic memory allocation issues in processing module</div>
+                            <div class="pattern-metrics">8 occurrences | Peak: 09:15</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="anomalies">
+                <div class="anomaly-grid">
+                    <div class="anomaly-card">
+                        <div class="anomaly-icon">warning</div>
+                        <div class="anomaly-title">Unusual Traffic Pattern</div>
+                        <div class="anomaly-time">2026-04-17 14:30</div>
+                        <div class="anomaly-description">3x normal traffic detected</div>
+                    </div>
+                    <div class="anomaly-card">
+                        <div class="anomaly-icon">error</div>
+                        <div class="anomaly-title">Service Degradation</div>
+                        <div class="anomaly-time">2026-04-17 13:45</div>
+                        <div class="anomaly-description">Response time increased by 200%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="recommendations">
+                <div class="recommendations-list">
+                    <div class="recommendation-item priority-high">
+                        <div class="rec-icon">priority_high</div>
+                        <div class="rec-content">
+                            <div class="rec-title">Optimize Database Connections</div>
+                            <div class="rec-description">Implement connection pooling and retry logic</div>
+                            <div class="rec-impact">Expected improvement: 40% reduction in timeouts</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-item priority-medium">
+                        <div class="rec-icon">tune</div>
+                        <div class="rec-content">
+                            <div class="rec-title">Scale Processing Module</div>
+                            <div class="rec-description">Add horizontal scaling for memory-intensive operations</div>
+                            <div class="rec-impact">Expected improvement: 25% better performance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

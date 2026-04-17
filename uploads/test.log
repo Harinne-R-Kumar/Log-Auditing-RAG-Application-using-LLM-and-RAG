@@ -1,0 +1,2 @@
+2026-04-17 10:00:00 INFO [Application] Starting application server
+2026-04-17 10:01:00 ERROR [Database] Connection timeout after 30 seconds

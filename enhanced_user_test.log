@@ -1,0 +1,7 @@
+2026-04-17 10:00:00 INFO [Application] Starting application server
+2026-04-17 10:01:00 ERROR [Database] Connection timeout after 30 seconds user_id=1023
+2026-04-17 10:02:00 CRITICAL [Security] Multiple login attempts detected session_id=abc123
+2026-04-17 10:03:00 ERROR [Auth] Authentication failed for user admin
+2026-04-17 10:04:00 WARNING [Memory] High memory usage detected session_id=abc123
+2026-04-17 10:05:00 ERROR [Database] Connection failed session_id=abc123
+2026-04-17 10:06:00 INFO [Application] Request processed for user_id=1023
