@@ -115,10 +115,6 @@ Content-Type: application/json
 }
 ```
 
-## Resume-Ready Project Description
-
-Built a **production-grade Agentic AI Log Auditing & Analysis Platform** that combines classical ML, anomaly detection, LLM reasoning, and FAISS-based RAG to automate incident triage from both real-time streams and uploaded log files. Implemented a full-stack Flask + SocketIO system with an interactive dashboard, hybrid log classification (Regex + TF-IDF/LogReg + Grok fallback), timeline reconstruction, root cause analysis, and actionable remediation suggestions. Added feedback-driven learning and model evaluation (Accuracy/F1) to support continuous quality improvements in AI-assisted debugging workflows.
-
 ## Notes for Production Hardening
 
 - Add authentication and RBAC.
